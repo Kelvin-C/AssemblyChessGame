@@ -10,7 +10,7 @@ The game requires a keypad, 2 DAC circuits, an oscilloscope and an ATmega128 pro
 The game was completely coded in assembly language, hence the code is long for its purpose.
 
 The game is displayed on the oscilloscope with chess pieces as triangles for player 1 and circles for player 2.
-Each piece contains a letter allowing the role each piece to be identified.
+Each piece contains a letter allowing the role of each piece to be identified.
 The oscilloscope must be set at 0.2V per grid with a 8x8 grid display. This will allow the cursor and shapes to fill one grid each. 
 
 ———————————————————————————————————————

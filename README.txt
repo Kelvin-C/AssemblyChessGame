@@ -22,7 +22,7 @@ The files:
 
 	- Python (folder)
 		- A python script was used to draw each shape with the right digital values. The values are then stored in assembly to 
-		allow the shapes to be drawn on the oscilloscope.
+		  allow the shapes to be drawn on the oscilloscope.
 
 ———————————————————————————————————————
 

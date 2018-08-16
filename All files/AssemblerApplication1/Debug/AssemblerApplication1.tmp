@@ -1,0 +1,187 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATmega128"</DEVICE>
+ <WORKING_DIR>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\AVR Tools\AvrAssembler2\Appnotes</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.0.106\avrasm\inc\m128def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\Debug\AssemblerApplication1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>AssemblerApplication1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>AssemblerApplication1.map</FILE>
+  <FILE>AssemblerApplication1.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <Init><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>86</LINE></Init>
+  <TIM0_COMP><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>207</LINE></TIM0_COMP>
+  <X_table><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>44</LINE></X_table>
+  <Y_table><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>67</LINE></Y_table>
+  <init_X_table><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>278</LINE></init_X_table>
+  <init_Y_table><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>295</LINE></init_Y_table>
+  <Idisp><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>159</LINE></Idisp>
+  <LCDMessage_out><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>261</LINE></LCDMessage_out>
+  <main><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>312</LINE></main>
+  <DEL10ms><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1530</LINE></DEL10ms>
+  <DEL4P1ms><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1545</LINE></DEL4P1ms>
+  <DEL100mus><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1553</LINE></DEL100mus>
+  <busylcd><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>199</LINE></busylcd>
+  <CLRDIS><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>192</LINE></CLRDIS>
+  <TIM0_COMP_ret><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>255</LINE></TIM0_COMP_ret>
+  <in_IO1><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>623</LINE></in_IO1>
+  <LCDMessage_More><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>265</LINE></LCDMessage_More>
+  <LCDMessage_End><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>273</LINE></LCDMessage_End>
+  <init_X_table_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>286</LINE></init_X_table_loop>
+  <init_Y_table_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>303</LINE></init_Y_table_loop>
+  <loadtableY><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>319</LINE></loadtableY>
+  <drawsquare><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>328</LINE></drawsquare>
+  <loadtableY_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>334</LINE></loadtableY_loop>
+  <loadsquare><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>566</LINE></loadsquare>
+  <loadtableY_loop_cont><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>337</LINE></loadtableY_loop_cont>
+  <skipdraw><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>361</LINE></skipdraw>
+  <redraw_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>349</LINE></redraw_loop>
+  <loadtableX><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>367</LINE></loadtableX>
+  <redraw_loop_cont><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>355</LINE></redraw_loop_cont>
+  <before_loadtriangle><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>372</LINE></before_loadtriangle>
+  <before_loadcircle><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>386</LINE></before_loadcircle>
+  <draw_letter_pawn><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>400</LINE></draw_letter_pawn>
+  <draw_letter_rook><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>425</LINE></draw_letter_rook>
+  <draw_letter_knight><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>465</LINE></draw_letter_knight>
+  <jump_draw_letter_bishop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>456</LINE></jump_draw_letter_bishop>
+  <jump_draw_letter_queen><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>459</LINE></jump_draw_letter_queen>
+  <jump_draw_letter_king><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>462</LINE></jump_draw_letter_king>
+  <draw_letter_pawn_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>404</LINE></draw_letter_pawn_loop>
+  <jump_loadtriangle><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>453</LINE></jump_loadtriangle>
+  <jump_loadcircle><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>450</LINE></jump_loadcircle>
+  <draw_letter_rook_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>429</LINE></draw_letter_rook_loop>
+  <loadcircle><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>601</LINE></loadcircle>
+  <loadtriangle><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>583</LINE></loadtriangle>
+  <draw_letter_bishop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>490</LINE></draw_letter_bishop>
+  <draw_letter_queen><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>515</LINE></draw_letter_queen>
+  <draw_letter_king><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>540</LINE></draw_letter_king>
+  <draw_letter_knight_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>469</LINE></draw_letter_knight_loop>
+  <draw_letter_bishop_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>494</LINE></draw_letter_bishop_loop>
+  <draw_letter_queen_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>519</LINE></draw_letter_queen_loop>
+  <draw_letter_king_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>544</LINE></draw_letter_king_loop>
+  <squareloop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>569</LINE></squareloop>
+  <triangleloop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>587</LINE></triangleloop>
+  <circleloop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>605</LINE></circleloop>
+  <return><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>620</LINE></return>
+  <IO1><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1513</LINE></IO1>
+  <del5mus><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1561</LINE></del5mus>
+  <in_IO2><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>630</LINE></in_IO2>
+  <IO2><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1520</LINE></IO2>
+  <compare><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>637</LINE></compare>
+  <subcompare0><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>648</LINE></subcompare0>
+  <subcompare1><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>659</LINE></subcompare1>
+  <subcompare2><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>674</LINE></subcompare2>
+  <subcompare3><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>712</LINE></subcompare3>
+  <c><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>653</LINE></c>
+  <eight><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>664</LINE></eight>
+  <four><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>683</LINE></four>
+  <six><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>693</LINE></six>
+  <e><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>702</LINE></e>
+  <select_piece><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>733</LINE></select_piece>
+  <jump_move_piece><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>729</LINE></jump_move_piece>
+  <two><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>717</LINE></two>
+  <move_piece><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>804</LINE></move_piece>
+  <e_compare_x><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>744</LINE></e_compare_x>
+  <e_return><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>740</LINE></e_return>
+  <e_compare_y><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>757</LINE></e_compare_y>
+  <store_piece><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>767</LINE></store_piece>
+  <store_piece_check_player1><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>772</LINE></store_piece_check_player1>
+  <store_piece_check_player2><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>778</LINE></store_piece_check_player2>
+  <store_piece_coordinates><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>784</LINE></store_piece_coordinates>
+  <store_piece_reject><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>797</LINE></store_piece_reject>
+  <compare_chess_piece><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>817</LINE></compare_chess_piece>
+  <pawn><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>844</LINE></pawn>
+  <jump_rook><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>877</LINE></jump_rook>
+  <jump_knight><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>880</LINE></jump_knight>
+  <jump_bishop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>883</LINE></jump_bishop>
+  <jump_queen><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>886</LINE></jump_queen>
+  <jump_king><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>889</LINE></jump_king>
+  <pawn_firstmove_check><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>866</LINE></pawn_firstmove_check>
+  <pawn_player_check><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>906</LINE></pawn_player_check>
+  <reject_move><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1494</LINE></reject_move>
+  <pawn_firstmove_player_check><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>872</LINE></pawn_firstmove_player_check>
+  <p1_pawn_firstmove><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>892</LINE></p1_pawn_firstmove>
+  <p2_pawn_firstmove><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>899</LINE></p2_pawn_firstmove>
+  <rook><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>927</LINE></rook>
+  <knight><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1073</LINE></knight>
+  <bishop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1111</LINE></bishop>
+  <queen><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1171</LINE></queen>
+  <king><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1187</LINE></king>
+  <jump_checkoccupy><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>923</LINE></jump_checkoccupy>
+  <checkblock_vertical><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>938</LINE></checkblock_vertical>
+  <p1_move_pawn><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>913</LINE></p1_move_pawn>
+  <p2_move_pawn><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>918</LINE></p2_move_pawn>
+  <checkoccupy><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1250</LINE></checkoccupy>
+  <checkblock_horizontal><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>944</LINE></checkblock_horizontal>
+  <checkblock_vertical_pos><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>950</LINE></checkblock_vertical_pos>
+  <checkblock_vertical_neg><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>958</LINE></checkblock_vertical_neg>
+  <checkblock_horizontal_pos><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>966</LINE></checkblock_horizontal_pos>
+  <checkblock_horizontal_neg><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>974</LINE></checkblock_horizontal_neg>
+  <checkblock_compare_loop><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1030</LINE></checkblock_compare_loop>
+  <checkblock_check_if_castling_right><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>982</LINE></checkblock_check_if_castling_right>
+  <checkblock_check_if_castling_left><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>989</LINE></checkblock_check_if_castling_left>
+  <king_castling_right_rook_confirm_move><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>996</LINE></king_castling_right_rook_confirm_move>
+  <king_castling_left_rook_confirm_move><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1012</LINE></king_castling_left_rook_confirm_move>
+  <confirm_move><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1354</LINE></confirm_move>
+  <checkblock_compare_x><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1036</LINE></checkblock_compare_x>
+  <checkblock_compare_y><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1047</LINE></checkblock_compare_y>
+  <checkblock_reset><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1057</LINE></checkblock_reset>
+  <checkblock_rejectmove><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1061</LINE></checkblock_rejectmove>
+  <knight_check1><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1087</LINE></knight_check1>
+  <knight_check2><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1094</LINE></knight_check2>
+  <jump_checkoccupy1><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1101</LINE></jump_checkoccupy1>
+  <jump_checkblock_vertical><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1104</LINE></jump_checkblock_vertical>
+  <jump_checkblock_horizontal><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1107</LINE></jump_checkblock_horizontal>
+  <checkblock_xy><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1123</LINE></checkblock_xy>
+  <checkblock_xy_opp><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1128</LINE></checkblock_xy_opp>
+  <checkblock_xy_right><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1134</LINE></checkblock_xy_right>
+  <checkblock_xy_left><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1143</LINE></checkblock_xy_left>
+  <checkblock_xy_opp_right><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1152</LINE></checkblock_xy_opp_right>
+  <checkblock_xy_opp_left><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1161</LINE></checkblock_xy_opp_left>
+  <king_check_castling><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1207</LINE></king_check_castling>
+  <king_check_horizontal><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1215</LINE></king_check_horizontal>
+  <king_castling_right><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1236</LINE></king_castling_right>
+  <king_castling_left><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1224</LINE></king_castling_left>
+  <checkoccupy_compare_x><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1275</LINE></checkoccupy_compare_x>
+  <checkoccupy_nooccupy><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1257</LINE></checkoccupy_nooccupy>
+  <jump_confirm_move><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1267</LINE></jump_confirm_move>
+  <pawn_nooccupy_check_diagonal><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1270</LINE></pawn_nooccupy_check_diagonal>
+  <checkoccupy_compare_y><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1286</LINE></checkoccupy_compare_y>
+  <checkoccupy_occupied><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1296</LINE></checkoccupy_occupied>
+  <checkoccupy_occupied_check_player1><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1301</LINE></checkoccupy_occupied_check_player1>
+  <checkoccupy_occupied_check_player2><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1307</LINE></checkoccupy_occupied_check_player2>
+  <checkoccupy_reset><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1330</LINE></checkoccupy_reset>
+  <jump_reject_move><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1327</LINE></jump_reject_move>
+  <check_if_pawn><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1313</LINE></check_if_pawn>
+  <setcapturedflag><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1337</LINE></setcapturedflag>
+  <pawn_yesoccupy_check_vertical><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1322</LINE></pawn_yesoccupy_check_vertical>
+  <set_to_selectpiece><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1371</LINE></set_to_selectpiece>
+  <firstmove_flagchange><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1364</LINE></firstmove_flagchange>
+  <checkwin><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1379</LINE></checkwin>
+  <win_message><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1393</LINE></win_message>
+  <set_to_selectpiece_cont><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1411</LINE></set_to_selectpiece_cont>
+  <jump_clearface><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1419</LINE></jump_clearface>
+  <jump_set_player2><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1443</LINE></jump_set_player2>
+  <set_player1><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1422</LINE></set_player1>
+  <clearface><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1446</LINE></clearface>
+  <set_player2><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1473</LINE></set_player2>
+  <sadface><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1502</LINE></sadface>
+  <COUNT><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1540</LINE></COUNT>
+  <COUNT1><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1548</LINE></COUNT1>
+  <COUNT2><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1556</LINE></COUNT2>
+  <COUNT3><FILE>\\icnas2.cc.ic.ac.uk\ncc214\Desktop\Microprocessor\20160227-Chess - (afternoon)\AssemblerApplication1\AssemblerApplication1\main.asm</FILE><LINE>1564</LINE></COUNT3>
+ </LABELS>
+</ASSEMBLER_INFO>

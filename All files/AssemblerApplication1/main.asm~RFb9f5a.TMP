@@ -1,0 +1,895 @@
+;  **  ATmega103(L) Assembly Language File - IAR Assembler Syntax **
+;
+.DEVICE ATmega128
+
+;*************************************************************************
+		.include "m128def.inc"
+	/*	
+;
+		jmp Init		                 ; jmp is 2 word instruction to set correct vector
+		nop			; Vector Addresses are 2 words apart
+		reti			; External 0 interrupt  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; External 1 interrupt  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; External 2 interrupt  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; External 3 interrupt  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; External 4 interrupt  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; External 5 interrupt  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; External 6 interrupt  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; External 7 interrupt  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; Timer 2 Compare Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; Timer 2 Overflow Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; Timer 1 Capture  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; Timer1 CompareA  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; Timer 1 CompareB  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; Timer 1 Overflow  Vector 
+		nop;jmp TIM0_COMP		; Timer 0 Compare  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; Timer 0 Overflow interrupt  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; SPI  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; UART Receive  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; UDR Empty  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; UART Transmit  Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; ADC Conversion Complete Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; EEPROM Ready Vector 
+		nop			; Vector Addresses are 2 words apart
+		reti			; Analog Comparator  Vector 
+*/
+.org		$0080			; start address well above interrupt table
+;**************************************************************************
+;.org 0
+
+.def TempReg  = r16
+.def tempreg2 = r17 
+.def TempReg3 = r18 
+.def tempreg4 = r19 
+
+.def DispVal    = r20
+.def ADCChannel   =  r21
+.def ADCDL           =  r22
+.def ADCDH           =  r23
+
+.def x_shift		= r24 
+.def y_shift		= r25 
+;.def FlagReg           =  rXX
+
+RJMP Init
+;*************************************************************************
+Init:                
+		; **** Stack Pointer Setup Code ****
+		; Stack Pointer Setup 
+		ldi r16,$0F
+		out SPH,r16		; Stack Pointer High Byte 
+		ldi r16, $FF		; Stack Pointer Setup 
+		out SPL,r16		; Stack Pointer Low Byte 
+                                   ;
+   		; **** RAMPZ Setup Code ****  
+		ldi  r16, $00		; 1 = EPLM acts on upper 64K
+		out RAMPZ, r16		; 0 = EPLM acts on lower 64K
+
+		; ******* Sleep Mode And SRAM  *******
+		ldi r16, $C0		; Idle Mode - SE bit in MCUCR not set
+		out MCUCR, r16		; External SRAM Enable Wait State Enabled
+   
+		; ******* Comparator Setup Code ****  
+		ldi r16,$80		; Comparator Disabled, Input Capture Disabled 
+		out ACSR, r16		; Comparator Settings
+
+		/* 
+		; **** Timer0 Setup Code ****  
+		ldi r16,$0C			; Timer 0 Setup
+		out TCCR0, r16		; Timer - PRESCALE TCK0 BY 256
+							; (devide the 8 Mhz clock by 256)
+							; clear timer on OCR0 match
+		ldi r16,$4e			; load OCR0 with n=78
+		out OCR0,r16		; The counter will go every
+                            ; n*256*125 nsec
+                               
+		; **** Interrupts Setup Code ****  
+		ldi r16, $02		; OCIE0
+		out TIMSK, r16		; T0: Output compare match 
+		*/
+		
+        ; ******* Port A Setup Code ****  
+		ldi r16, $FF		; Address AD7 to AD0
+		out DDRA, r16		; Port A Direction Register
+		ldi r16, $00		; Init value 
+		out PORTA, r16		; Port A value
+   
+		; ******* Port B Setup Code ****  
+		ldi r16, $FF		; 
+		out DDRB , r16		; Port B Direction Register
+		ldi r16, $00		; Init value 
+		out PORTB, r16		; Port B value
+   
+		; ******* Port C Setup Code ****  
+		ldi r16, $FF		; Address AD15 to AD8
+		out PORTC, r16		; Port C value
+   
+		; ******* Port D Setup Code ****  
+		ldi r16, $FF		; I/O: 
+		out DDRD, r16		; Port D Direction Register
+		ldi r16, $00		; Init value 
+		out PORTD, r16		; Port D value
+   
+		;******* Port E setup Code ****  
+		ldi r16, $F0		; 0-3 output, 4-7 input
+		out DDRE, r16		; Port E Direction Register
+		ldi r16, $0F		; Init value 
+		out PORTE, r16		; Port E value
+
+		; ******* Port F Setup Code ****  
+		ldi r16, $F0		; 
+		sts DDRF, r16		; Port E Direction Register
+		ldi r16, $0F		; Init value 
+		sts PORTF, r16		; Port E value
+                                   ;
+		sei			; Enable All Interrupts 
+                                   ;
+
+
+									 rcall init_X_table
+									 rcall init_Y_table
+									 rcall Idisp
+									 rcall Mess1out
+									 rjmp main
+
+
+sine_cos_table: ;X table [y_n, x_n ..., y1, x1]. {ld rd, -X}: load from (x1, y1), voltages length = [12-119] = 108
+;1) message [1-7]
+;2) voltages for sine and cosine alternatively - for circle drawing [8-31]
+;3) voltages for inverted triangle [32-67]
+;4) voltages for square [68-115]
+.db ' ','r','e','y','a','l','P',\
+136, 122, 133, 119, 128, 117, 122, 119, 119, 122, 117, 128, 119, 133, 122, 136, 128, 138, 133, 136, 136, 133, 138, 128,\
+117, 138, 121, 136, 125, 134, 130, 132, 134, 130, 138, 128, 138, 128, 134, 125, 130, 123, 125, 121, 121, 119, 117, 117, 117, 138, 117, 134, 117, 130, 117, 125, 117, 121, 117, 117,\
+138, 117, 134, 117, 130, 117, 125, 117, 121, 117, 117, 117, 138, 117, 138, 121, 138, 125, 138, 130, 138, 134, 138, 138, 138, 138, 134, 138, 130, 138, 125, 138, 121, 138, 117, 138, 117, 138, 117, 134, 117, 130, 117, 125, 117, 121, 117, 117
+
+;*******************************************************************************
+; Display Initialization routine
+;
+; Since we cannot rely that that Power Supply will have on power up
+; the required by Hitachi Specs.....we do the initialization 'by hand'.
+; Follow Blindly the White-Red Book of Hitachi.
+; Hitachi Liquid Crystal Disply LCD Initialization Sequence.
+;
+Idisp:		
+		RCALL DEL15ms                ; wait 15ms for things to relax after power up           
+		ldi r16,    $30	         ; Hitachi says do it...
+		sts   $8000,r16                      ; so i do it....
+		RCALL DEL4P1ms             ; Hitachi says wait 4.1 msec
+		sts   $8000,r16	         ; and again I do what I'm told
+		rcall DEL100mus                 ; wait 100 mus
+		sts   $8000,r16	         ; here we go again folks
+                rcall busylcd		
+		ldi r16, $3F	         ; Function Set : 2 lines + 5x7 Font
+		sts  $8000,r16
+                rcall busylcd
+		ldi r16,  $08	         ;display off
+		sts  $8000, r16
+                rcall busylcd		
+		ldi r16,  $01	         ;display on
+		sts  $8000,  r16
+                rcall busylcd
+                ldi r16, $38	        ;function set
+		sts  $8000, r16
+		rcall busylcd
+		ldi r16, $0E	        ;display on
+		sts  $8000, r16
+		rcall busylcd
+		ldi r16, $06                           ;entry mode set increment no shift
+		sts  $8000,  r16
+                rcall busylcd
+                clr r16
+                ret
+;
+;**********************************************************************************
+; This clears the display so we can start all over again
+;
+CLRDIS:
+	    ldi r16,$01	; Clear Display send cursor 
+		sts $8000,r16   ; to the most left position
+		rcall busylcd
+                ret
+;**********************************************************************************
+;   
+busylcd:        
+        lds r16, $8000   ;access 
+        sbrc r16, 7      ;check busy bit  7
+        rjmp busylcd
+        rcall DEL100mus
+        ret              ;return if clear
+;*************************************************************************
+
+/* 
+TIM0_COMP:	reti
+		in R4,SREG		; save Sreg
+		rcall keypad_main
+again:
+		out SREG,r4		; restore sreg	
+		reti			; Timer 0 Overflow interrupt code here 
+*/
+	
+;*************************************************************************											 
+;port b = x axis, channel 1
+;port d = y axis, channel 2
+
+chess_coordinates_table: ;Y table
+;1) voltage shifts for circles (flipped) -> [y_n, x_n ..., y1, x1]. ->-> (1 King, 1 Queen, 2 Knights, 2 Bishops, 2 Rooks, 8 Pawns) ->-> ;[1-32]
+;2) voltage shifts for triangles (flipped) -> [y_n, x_n ..., y1, x1]  ;[33-64]
+;3) voltage shifts for square (cursor) ;[65-66]
+;4) index for selected chess piece ;[67]
+;5) value for flag, 0 = select piece; 1 = move piece ;[68]
+;6) value for flag, 1 = player 1; 2 = player 2 ;[69]
+;7) Nothing [70]
+.db -66, 22, -66, 0, -66, -22, -66, 44, -66, -44, -66, 66, -66, -66, -66, 88, -44, -66, -44, -44, -44, -22, -44, 0, -44, 22, -44, 44, -44, 66, -44, 88,\
+88, 22, 88, 0, 88, -22, 88, 44, 88, -44, 88, 66, 88, -66, /**/0, 88, 66, -66, 66, -44, 66, -22, 66, 0, 66, 22, 66, 44, 66, 66, 66, 88,\
+0,66, \
+23,\
+1,\
+1,\
+0	
+
+init_X_table:
+		ldi r16, 115; length of sine_cos_table
+		ldi ZL, low(sine_cos_table*2)
+		ldi ZH, high(sine_cos_table*2)
+		.equ sine = $0500
+		ldi XL, low(sine)
+		ldi XH, high(sine)
+
+loop1:	;load 8-bit number at address to R0, store number into Y+
+		lpm					; move one byte from PM to r0; Check Assembly 3 - page 28
+		st X+,r0			; store in SRAM (and increment)
+		inc ZL
+		dec r16			; count down bytes copied
+		brne loop1
+		ret
+
+init_Y_table:
+		ldi r16, 70; length of chess_coordinates_table
+		ldi ZL, low(chess_coordinates_table*2)
+		ldi ZH, high(chess_coordinates_table*2)
+		.equ chess_coordinates = $0100
+		ldi YL, low(chess_coordinates)
+		ldi YH, high(chess_coordinates)
+
+loop2:	;load 8-bit number at address to R0, store number into Y+
+		lpm					; move one byte from PM to r0; Check Assembly 3 - page 28
+		st Y+,r0			; store in SRAM (and increment)
+		inc ZL
+		dec r16			; count down bytes copied
+		brne loop2
+		ret
+
+loadtableX:
+		cpi r16, 17
+		brge loadtriangle
+
+		cpi r16, 17
+		brlt loadcircle
+
+loadsquare:
+		ldi r17, 24
+
+squareloop:
+		ld r19, -X
+		add r19, x_shift
+		out portb, r19
+
+		ld r19, -X
+		add r19, y_shift
+		out portd, r19
+
+		dec r17
+		brne squareloop
+		subi XL, $D0 ;shift pointer X by +48 (reset). will be captured -> no longer 24
+		ret
+
+loadtriangle:
+		subi XL, 48
+		ldi r17, 18; no of times to loop - half number of triangle table X
+
+triangleloop:
+		ld r19, -X
+		add r19, x_shift
+		out portb, r19
+
+		ld r19, -X
+		add r19, y_shift
+		out portd, r19
+
+		dec r17	;r17 decrement
+		brne triangleloop
+		subi XL, $AC ;shift pointer X by +84 (reset). will be captured -> no longer 24
+		ret
+
+loadcircle:
+		subi XL, 84
+		ldi r17, 12; no of times to loop - half number of circle table X
+
+circleloop:
+		ld r19, -X
+		add r19, x_shift
+		out portb, r19
+
+		ld r19, -X
+		add r19, y_shift
+		out portd, r19
+
+		dec r17	;r17 decrement
+		brne circleloop
+		subi XL, $94 ;shift pointer X by +108 (reset). will be captured -> no longer 24
+		ret
+
+loadtableY:
+		subi YL, 4
+		ld x_shift, -Y
+		ld y_shift, -Y
+		ldi r18, 20 ;no of times to redraw
+		rcall drawsquare
+		ldi r16, 32; no of chess pieces - DON'T CHANGE
+		rjmp loadtableY_loop
+
+drawsquare:
+		rcall loadsquare
+		dec r18
+		brne drawsquare
+		ret
+
+loadtableY_loop:
+		ldi r18, 20; no of times to redraw
+		ld x_shift, -Y
+		ld y_shift, -Y
+		
+redraw_loop:
+		rcall loadtableX
+		dec r18
+		brne redraw_loop
+
+		dec r16
+		brne loadtableY_loop
+		subi YL, $BA ;shift pointer X by +70 (reset)
+		ret
+
+
+Mess1Out:
+            LDI r18, 7		;length of messages in X table
+			subi XL, 108	;length of square/sin/cos part of X table
+
+Mess1More:
+			ld r17, -X
+			sts $C000, r17
+			rcall busylcd
+			DEC r18
+			BREQ Mess1End
+			rjmp Mess1More
+
+
+Mess1End:  	  
+			subi XL, $8D	;reset X (+115)
+			ret           
+/*
+main:
+		rcall loadtableY
+		;rcall keypad_main
+		rcall plotscreen_loop
+		rjmp main
+
+show_message:	
+		rcall Mess1Out
+		;rcall bigdel
+        ;rcall CLRDIS
+		ret
+*/
+main:
+		rcall plotscreen_loop
+		rcall keypad_main
+		rjmp main
+            
+plotscreen_loop:
+	rcall loadtableY
+	rcall del100mus
+	rcall loadtableY
+	rcall del100mus
+	rcall loadtableY
+	rcall del100mus
+	rcall loadtableY
+	rcall del100mus
+	rcall loadtableY
+	rcall del100mus
+	rcall loadtableY
+	rcall del100mus
+	ret
+
+
+keypad_main:	
+		ldi r19, 2
+		
+		subi YL, 1
+		ld r16, -Y
+		subi YL, $FE
+
+		cpi r16, 1
+		breq in_IO1
+		cpi r16, 2
+		breq in_IO3
+		
+
+in_IO1:	rcall IO1
+		rcall del5mus
+		in r17, pine
+		dec r19
+		breq main
+		cpi r17, $0F
+		breq in_IO1
+		rcall in_IO2
+		ret
+
+in_IO2:	
+		rcall IO2
+		rcall del5mus
+		in r18, pine
+		cpi r18, $F0
+		breq main
+		rjmp compare
+		ret
+
+in_IO3: rcall IO3
+		rcall del5mus
+		in r17, pinf
+		dec r19
+		breq main
+		cpi r17, $0F
+		breq in_IO3
+		rcall in_IO4
+		ret
+
+in_IO4:	
+		rcall IO4
+		rcall del5mus
+		in r18, pinf
+		cpi r18, $F0
+		breq main
+		rjmp compare
+		ret
+
+subcompare0:
+		cpi r18, $70
+		breq a
+		cpi r18, $B0
+		breq zero
+		cpi r18,$D0
+		breq b
+		cpi r18, $E0
+		breq c
+							
+a: ldi r17, $41
+	rjmp output
+zero: ldi r17, $30
+	rjmp output
+b: ldi r17, $42
+	rjmp output
+c: 		ldi r17, $43
+	rjmp output
+
+subcompare1:
+		cpi r18, $70
+		breq seven
+		cpi r18,$B0
+		breq eight
+		cpi r18, $D0
+		breq nine
+		cpi r18, $E0
+		breq d
+
+seven: ldi r17,  $37
+	rjmp output
+eight: 	subi YL, 6
+	ld r18, Y
+	ldi r16, 88
+	CPSE r18, r16
+	subi r18, $EA
+	st Y, r18
+	subi YL, $FA
+	ret
+nine: ldi r17, $39
+	rjmp output
+d: 		ldi r17, $44
+	rjmp output
+
+compare: 
+		cpi r17, $0E
+		breq subcompare0
+		cpi r17, $0D
+		breq subcompare1
+		cpi r17, $0B
+		breq subcompare2
+		cpi r17, $07
+		breq subcompare3
+
+output: 
+		ldi r17, $0F
+		ldi r18, $F0
+		rjmp main
+
+subcompare3:
+		cpi r18, $70
+		breq one
+		cpi r18, $B0
+		breq two
+		cpi r18, $D0
+		breq three
+		cpi r18, $E0
+		breq f
+
+one: ldi r17, $31
+	rjmp output
+two: ; move up by one grid
+	subi YL, 6
+	ld r18, Y
+	ldi r16, $BE
+	cpse r18, r16
+	subi r18, 22
+	st Y, r18
+	subi YL, $FA
+	ret
+three: ldi r17, $33
+	rjmp output
+f: 		ldi r17, $46
+	rjmp output
+
+subcompare2:
+		cpi r18, $70
+		breq four
+		cpi r18, $B0
+		breq five
+		cpi r18, $D0
+		breq six
+		cpi r18, $E0
+		breq e
+
+four: 
+	subi YL, 5
+	ld r18, Y
+	ldi r16, 88
+	cpse r18, r16
+	subi r18, $EA
+	st Y, r18
+	subi YL, $FB
+	ret
+
+five: ldi r17, $35
+	rjmp output
+
+six: subi YL, 5
+	ld r18, Y
+	ldi r16, $BE
+	cpse r18, r16
+	subi r18, 22
+	st Y, r18
+	subi YL, $FB
+	ret
+
+e: 	
+	subi YL, 2
+	ld r16, -Y
+	cpi r16, 0
+	breq select_piece
+	cpi r16, 1
+	breq move_piece
+	ret
+
+set_player1:
+	ldi r16, 1
+	st Y, r16 ;update flag to 2 for player 2
+	subi YL, $FE
+	ret
+
+set_player2:
+	ldi r16, 2
+	st Y, r16 ;update flag to 2 for player 2
+	subi YL, $FE
+	ret
+
+move_piece:
+	ld r16, -Y ; index of selected piece from previous
+	ld r17, -Y ; x coordinate of the grid to be moved to
+	ld r18, -Y ; y coordinate of the grid to be moved to
+	subi YL, $FA ; reset Y 
+	sub YL, r16 ; go to x coodinate of selected chess piece
+	ld r19, Y ; x coordinate of chess piece before move
+	dec YL
+	ld r20, Y ; y coordinate of chess piece before move
+	sub r19, r17 ;difference between x coordinates
+	sub r20, r18 ;difference between y coordinates
+
+compare_chess_piece:
+	cpi r16, 21 ;max index for player 1 pawn
+	brlt pawn
+	cpi r16, 25 ;max index for player 1 rook
+	brlt rook
+	rjmp reject_move
+	/*
+	cpi r16, 30 ;max index for player 1 bishop
+	brlt	
+	cpi r16, 34 ;max index for player 1 knight
+	brlt
+	cpi r16, 36 ;max index for player 1 queen
+	brlt
+	cpi r16, 38 ;max index for player 1 king
+	brlt
+	cpi r16, 54 ;max index for player 2 pawn
+	brlt pawn
+	cpi r16, 58 ;max index for player 2 rook
+	brlt 
+	cpi r16, 62 ;max index for player 2 bishop
+	brlt
+	cpi r16, 66 ;max index for player 2 knight
+	brlt
+	cpi r16, 68 ;max index for player 2 queen
+	brlt
+	cpi r16, 70 ;max index for player 2 king
+	brlt*/
+
+pawn:
+	ldi r25, $33
+	sts $C000, r25
+	rjmp reject_move
+
+rook:
+	cpi r19, 0
+	breq confirm_move
+	cpi r20, 0
+	breq confirm_move
+	rjmp reject_move
+	
+confirm_move:
+	subi YL, $FF;$FE
+	st Y, r17	;overwrite x coordinate to square x coordinate
+	dec YL
+	st Y, r18	;overwrite y coordinate to square y coordinate
+	subi YL, $FF ; reset
+	add YL, r16	; Y
+	subi YL, 3
+	ldi r16, 0
+	st Y, r16
+	subi YL, $FD
+	;rcall bigdel
+	ldi r25, $30
+	sts $C000, r25
+	rjmp main
+
+	/*
+	subi YL, 2
+	ld r16, Y
+	subi YL, $FE
+
+	cpi r16, 1
+	breq set_player2
+
+	cpi r16, 2
+	breq set_player1
+	
+	ret*/
+
+reject_move:
+	subi YL, $FF;$FE ; reset
+	add YL, r16	; Y
+	;rcall CLRDIS
+	;rcall bigdel
+	;rcall mess1out
+	ldi r25, $34
+	sts $C000, r25
+	rjmp main
+
+select_piece:
+	subi YL, 1
+	ld r16, -Y ;load x voltage shift for square
+	ld r17, -Y ;load y voltage shift for square
+	ldi r19, 64 ; no of chess pieces *2 = total no. of their coordinates
+	rcall e_compare_x
+	ret
+
+e_return:
+	subi YL, $BA; shift pointer Y by +70 (reset)
+	ret
+
+e_compare_x:
+	ld r18, -Y 
+	dec r19
+
+	cp r16, r18 ;compare x voltage
+	breq e_compare_y
+	
+	subi YL, 1
+	dec r19
+	breq e_return
+
+	rjmp e_compare_x
+	
+e_compare_y:
+	dec r19
+	ld r18, -Y
+
+
+	cp r17, r18 ; comapre y voltage
+	breq store_piece_coordinates
+	rjmp e_compare_x
+
+store_piece_coordinates:
+	;flag register -> store coordinates r16, r17
+	;reset Y
+	;subi YL, $FA ; plus 6
+	subi r19, 69
+	subi YL, $FF ; reset due to pre-decrement
+	sub YL, r19 ;reset YL
+	neg r19 ; Distance between the x-coordinate of selected piece and the end
+
+	ld r18, -Y
+	ld r18, -Y
+	ld r18, -Y
+	ldi r18, 1 ;flag register
+	st Y, r18 ; store flag register -> 1. piece selected.
+	ld r18, -Y
+	st Y, r19 ; store index of selected piece
+	subi YL, $FC
+	ldi r25, $31
+	sts $C000, r25
+	ret
+
+
+
+IO1:	; ******* Port E setup Code ****  
+		ldi r16, $F0		; 0-3 output, 4-7 input
+		out DDRE, r16		; Port E Direction Register
+		ldi r16, $0F		; Init value 
+		out PORTE, r16		; Port E value
+		ret
+
+IO2:	; ******* Port E setup Code ****  
+		ldi r16, $0F		; 0-3 input, 4-7 output
+		out DDRE, r16		; Port E Direction Register
+		ldi r16, $F0		; Init value 
+		out PORTE, r16		; Port E value
+		ret
+
+IO3:	; ******* Port F setup Code ****  
+		ldi r16, $F0		; 0-3 output, 4-7 input
+		sts DDRF, r16		; Port E Direction Register
+		ldi r16, $0F		; Init value 
+		sts PORTF, r16		; Port E value
+		ret
+
+IO4:	; ******* Port F setup Code ****  
+		ldi r16, $0F		; 0-3 input, 4-7 output
+		sts DDRF, r16		; Port E Direction Register
+		ldi r16, $F0		; Init value 
+		sts PORTF, r16		; Port E value
+		ret
+
+/*
+DEL:
+            LDI XH, HIGH(1)
+            LDI XL, LOW (1)
+COUNT6:
+            SBIW XL, 1
+            BRNE COUNT6
+            RET 
+
+
+set_middle_line:
+		ldi x_value, $00
+		sts portf, x_value	
+		rcall sine
+		ret
+		
+
+									
+*/
+;
+;********************   DELAY ROUTINES ********************************************
+BigDEL:
+
+
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             rcall Del49ms
+             ret
+;
+DEL15ms:
+;
+; This is a 15 msec delay routine. Each cycle costs
+; rcall           -> 3 CC
+; ret              -> 4 CC
+; 2*LDI        -> 2 CC 
+; SBIW         -> 2 CC * 19997
+; BRNE        -> 1/2 CC * 19997
+; 
+
+            LDI ZH, HIGH(19997)
+            LDI ZL, LOW (19997)
+COUNT:  
+            SBIW ZL, 1
+            BRNE COUNT
+            RET
+;
+DEL4P1ms:
+            LDI ZH, HIGH(5464)
+            LDI ZL, LOW (5464)
+COUNT1:
+            SBIW ZL, 1
+            BRNE COUNT1
+            RET 
+;
+DEL100mus:
+            LDI ZH, HIGH(131)
+            LDI ZL, LOW (131)
+COUNT2:
+            SBIW ZL, 1
+            BRNE COUNT2
+            RET 
+;
+DEL49ms:
+            LDI ZH, HIGH(65535)
+            LDI ZL, LOW (65535)
+COUNT3:
+            SBIW ZL, 1
+            BRNE COUNT3
+            RET 
+DEL600mus:
+            LDI ZH, HIGH(798)
+            LDI ZL, LOW (798)
+COUNT4:
+            SBIW ZL, 1
+            BRNE COUNT4
+            RET 
+
+DEL10mus:
+            LDI ZH, HIGH(13)
+            LDI ZL, LOW (13)
+COUNT5:
+            SBIW ZL, 1
+            BRNE COUNT2
+            RET 
+
+DEL5mus:	
+            LDI ZH, HIGH(7)
+            LDI ZL, LOW (7)
+COUNT6:
+            SBIW ZL, 1
+            BRNE COUNT6
+            RET 
+
+exit:	.exit
+

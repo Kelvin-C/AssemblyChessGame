@@ -5,7 +5,7 @@ Oscilloscope Chess - Assembly language
 ———————————————————————————————————————
 
 A chess game is coded such that it is played with a keypad as the controller and an oscilloscope as the screen display.
-The only rules implemented were castling and the general movement of each piece. En passant, promotion, check and checkmate were not implemented.
+The only rules implemented were castling, the general movement of each piece and capturing of pieces. En passant, promotion, check and checkmate were not implemented.
 The game requires a keypad, 2 DAC circuits, an oscilloscope and an ATmega128 processor.
 The game was completely coded in assembly language, hence the code is long for its purpose.
 

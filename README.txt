@@ -21,7 +21,8 @@ The files:
 		- The assembly code containing all the functions required to create the chess game.
 
 	- Python (folder)
-		- A python script was used to draw each shape with the right digital values. The values are then stored in assembly to allow the shapes to be drawn on the oscilloscope.
+		- A python script was used to draw each shape with the right digital values. The values are then stored in assembly to 
+		allow the shapes to be drawn on the oscilloscope.
 
 ———————————————————————————————————————
 
